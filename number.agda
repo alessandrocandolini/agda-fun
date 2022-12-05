@@ -1,4 +1,4 @@
-module MaybeAgda where 
+module Number where 
 
 data Natural : Set where
   zero : Natural
@@ -24,5 +24,8 @@ _*_ (next k1) k2 = k1 + (k1 * k2)
 
 factorial : Natural → Natural
 factorial zero = one
-factorial (next k) = (next k) * (factorial (next k)) 
+factorial (next k) = (next k) * (factorial k)
+
+-- (k+1)! = (k+1) * k!
+-- 4! = 4 * 3! = 4 * (3 * 2!) = 4 * (3 * 2 * 1!) 
 
